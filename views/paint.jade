@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+	head
+		meta(http-equiv='Content-Type', content='text/html;charset=utf-8')
+		title=pageTitle
+		// link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		.main#main
+			div
+				.tx
+				.wz
+					#dround
+					span#question
+				.time#qTime 
+				.tc 
+					img(src="", align="absmiddle")
+			.qc
+			div
+				.hbbox
+					.hb#hb
+						canvas#paintArea(width="525",height="370")
+				.hbr
+					#openDiv
+						.ys#ys
+						.bc#bc
+						.tb#ssx
+							.tb2#btnRub
+								img(src="")
+							.tb3#btnClear
+								img(src="")
+					.msgArea#msgArea
+						.bd
+							input#btnSendMsg(type="button", value='發送')
+							input#txtMsg(type="text", size="13")
+	script(type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+	script(type='text/javascript' src='/javascripts/painter.js')
+	script(type='text/javascript' src='/javascripts/start.js')
