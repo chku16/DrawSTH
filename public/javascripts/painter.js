@@ -1,4 +1,4 @@
-(function()) {
+(function() {
   var Painter = {
     ctx: null,
     w: 0,
@@ -6,7 +6,18 @@
     bColor: null,
     bWidth: null,
     init: function() {
-
+      var can = $("#paintArea")[0];
+      this.ctx = can.getContext("2d");
+      this.w = can.width;
+      this.h = can.height;
+      this.setBGColor();
+      this.setBrushColor();
+      this.setBrushWidth();
+      this.ctx.lineCap = "round";
+      this.ctx.lineJoin = "round";
+      this.initCanvas();
+      this.initBrush();
+      this.initEraser();
     },
     initBrush: function() {
 
@@ -18,6 +29,9 @@
 
     },
     setBrushColor: function(color) {
+
+    },
+    setBrushWidth: function(width) {
 
     },
     initCanvas: function() {
@@ -41,7 +55,7 @@
     onPaintUpdate: function(data) {
 
     }
-  }
+  };
   Painter.init();
   window.Painter = Painter;
-}())
+}());

@@ -14,3 +14,15 @@ Usage
 Setup
 1. express drawsth && cd drawsth && npm install
 2. npm install nodemon
+--- for sublime ---
+3. npm install -g jshint
+npm install jade --global // jade???
+4. install package control:
+
+5. install packages
+- sidebargit
+- HTMLCSSJSprettify
+- sublimelinter
+- sublimelinter-jshint
+- SublimeCodeIntel
+- Jade (Jade.tmLanguage)
