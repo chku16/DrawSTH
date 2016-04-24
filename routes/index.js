@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/paint', function(req, res, next) {
-    res.render('paint', {
+router.get('/:page', function(req, res, next) {
+    res.render(req.params.page, {
         title: 'Express'
     });
 });
