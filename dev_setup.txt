@@ -1,0 +1,16 @@
+Install Node.js v5.11.0
+Usage
+- node hello.js	// testing
+- npm init	// package.json --> no need if use express
+- npm install express --save	// install express
+- npm install express-generator -g	// express generator
+- express drawsth && cd drawsth && npm install	// init express repo
+- set DEBUG=drawsth & node .\bin\www	// run the app
+- npm start	// another way to run the app
+- localhost:3000	// test in browser
+
+
+
+Setup
+1. express drawsth && cd drawsth && npm install
+2. npm install nodemon
