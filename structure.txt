@@ -1,0 +1,59 @@
+index.html - entry point to painter or stage
+
+##### need to agree on definition of each prop with properties
+
+painter.html
+- mainter an 'id' on client side to identify props identity
+- emit 'regPaint' to server
+- receive 'welcome' if server not full, otherwise receive 'full'
+- if 'full'
+    - go back to index by location...
+- if 'welcome'
+    - choose the side (left or right) and emit 'choose' to server // or modify to choosing the name, server generate a random position... but no one will win LOL
+    // enter the waiting loop???? need wait for 2 user? or just like agar.io allow multiple user at random position???
+    - ????
+    - render the drawing interface
+        - should provide templates for reference and drawing
+    - setup win/lose callback
+        - socket.on('win', callback)
+            - destroy/disable drawing interface
+            - display score
+            - display trophy
+            - display "play again"
+        - socket.on('lose', callback)
+            - destroy/disable drawing interface
+            - display score
+            - display unhappy face :(
+            - display "play again"
+    // enter the game loop
+    - wait for user to draw
+        - calculate similarity
+        - emit 'throw' to server (with object, similarity)
+        - need to freeze the drawing interface if being boomed X.X 
+            - socket.on('freeze', cb(how_many_seconds))
+    
+### use color to differentiate players?
+
+
+
+stage.html
+- render the stage (Samuel plz provide the background, various props [drawable form and animation form])
+- prepare definition of each prop with properties
+    - HP
+    - timeout : 0 means the main castle
+    - position : relative to the canvas
+    - userID : belongs to which user
+    - other properties: {} // specific to each object? --> inheritance pattern maybe too complex
+- setup socket.io canvas events
+    - 'draw' --> {object}
+    - 'scores' --> {scores} // update score for each player and display
+    - 'status' --> {'finish/playing'} // update game status
+- setup object-specific events
+    - 'gunfire'
+    - ...
+- on server side should store info of whole game
+    - players
+        - for each player
+            - current score
+    - canvas info
+        - props
